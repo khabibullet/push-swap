@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:00:05 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/13 21:12:35 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:01:54 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,11 @@ t_stack	*fill_stack(char **strs)
 	while (strs[i])
 	{
 		push_stack_back(a, ft_atoi_limited(strs[i]));
+		free(strs[i]);
 		a->tail->order = -1;
 		i++;
 	}
+	free(strs);
 	return (a);
 }
 

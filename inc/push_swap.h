@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:59:43 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/13 21:12:36 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/16 01:46:31 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,36 @@ char	*concatenate_args(char **argv);
 t_stack	*fill_stack(char **strs);
 void	check_doubles(t_stack *a);
 /*
-** sort functions
+** presort
 */
 void	presort_stack(t_stack *a);
+/*
+** rules
+*/
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+/*
+** sort algorithm functions
+*/
+void	push_median(t_stack *a, t_stack *b);
+void	launch_algo(t_stack *a, t_stack *b);
+void	sort_to_b(t_stack *a, t_stack *b);
+void	sort_to_a(t_stack *a, t_stack *b);
+/*
+** mini sort
+*/
+void	mini_sort(t_stack *a, t_stack *b);
+void	sort_three(t_stack *a);
+void	sort_four(t_stack *a, t_stack *b);
+void	sort_five(t_stack *a, t_stack *b);
 
 #endif
