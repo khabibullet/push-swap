@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:59:43 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/16 01:46:31 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:14:25 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 # define PUSH_SWAP_H
 # define BUFFER_SIZE 128
 # include "../libft/libft.h"
+
+typedef struct t_rules
+{
+	int		opt_i;
+	int		opt_j;
+	int		steps;
+	int		cases;
+	int		rr;
+	int		rrr;
+	int		ra_rrb;
+	int		rra_rb;
+}	t_rules;
 
 typedef struct t_node
 {
@@ -74,6 +86,14 @@ void	push_median(t_stack *a, t_stack *b);
 void	launch_algo(t_stack *a, t_stack *b);
 void	sort_to_b(t_stack *a, t_stack *b);
 void	sort_to_a(t_stack *a, t_stack *b);
+
+void	push_optimal_to_a(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_differ_direction(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_down_b_down(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_up_b_up(t_stack *a, t_stack *b, t_rules *rule);
+t_rules	count_rules_for_j(int sza, int szb, int i, int j);
+int		min_four(int a, int b, int c, int d);
+int		find_i_in_a(t_stack *a, int order);
 /*
 ** mini sort
 */
@@ -81,5 +101,8 @@ void	mini_sort(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
+
+void	exit_success(t_stack *a, t_stack *b);
+void	issorted(t_stack *a, t_stack *b);
 
 #endif

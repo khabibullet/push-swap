@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:26:20 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/13 17:39:40 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:27:45 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,8 @@ char	**ft_split_isspace(char	const	*s);
 int		ft_atoi_limited(const char	*str);
 char	*ft_strjoin_free(char *s1, char *s2);
 void	exit_error(void);
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
+int		ft_abs(int a);
 
 #endif	/*LIBFT_H*/

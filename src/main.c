@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:48:31 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/16 12:50:04 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:10:58 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	main(int argc, char **argv)
 		ft_printf("%d ", tmp->val);
 		tmp = tmp->next;
 	}
-	delete_stack(&a);
-	delete_stack(&b);
+	exit_success(a, b);
 	return (0);
 }
 
