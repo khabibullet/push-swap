@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:59:43 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/17 21:14:25 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/18 21:38:37 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 
 typedef struct t_rules
 {
-	int		opt_i;
-	int		opt_j;
-	int		steps;
-	int		cases;
-	int		rr;
-	int		rrr;
-	int		ra_rrb;
-	int		rra_rb;
+	int	opt_i;
+	int	opt_j;
+	int	steps;
+	int	min_steps;
+	int	best_case;
+	int	cases;
+	int	i;
+	int	j;
 }	t_rules;
 
 typedef struct t_node
@@ -62,10 +62,6 @@ char	*concatenate_args(char **argv);
 t_stack	*fill_stack(char **strs);
 void	check_doubles(t_stack *a);
 /*
-** presort
-*/
-void	presort_stack(t_stack *a);
-/*
 ** rules
 */
 void	pa(t_stack *a, t_stack *b);
@@ -80,20 +76,27 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 /*
-** sort algorithm functions
+** full sort
 */
 void	push_median(t_stack *a, t_stack *b);
-void	launch_algo(t_stack *a, t_stack *b);
 void	sort_to_b(t_stack *a, t_stack *b);
 void	sort_to_a(t_stack *a, t_stack *b);
-
-void	push_optimal_to_a(t_stack *a, t_stack *b, t_rules *rule);
-void	rot_differ_direction(t_stack *a, t_stack *b, t_rules *rule);
-void	rot_a_down_b_down(t_stack *a, t_stack *b, t_rules *rule);
-void	rot_a_up_b_up(t_stack *a, t_stack *b, t_rules *rule);
-t_rules	count_rules_for_j(int sza, int szb, int i, int j);
+void	final_rotate(t_stack *a);
+/*
+** sort_utils
+*/
+void	count_steps_for_j(int sza, int szb, t_rules *rule);
 int		min_four(int a, int b, int c, int d);
 int		find_i_in_a(t_stack *a, int order);
+void	issorted(t_stack *a, t_stack *b);
+/*
+** push_optimal
+*/
+void	push_optimal_to_a(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_up_b_down(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_down_b_up(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_down_b_down(t_stack *a, t_stack *b, t_rules *rule);
+void	rot_a_up_b_up(t_stack *a, t_stack *b, t_rules *rule);
 /*
 ** mini sort
 */
@@ -101,8 +104,11 @@ void	mini_sort(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
 void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
-
+/*
+** utils
+*/
+void	print_stacks(t_stack *a, t_stack *b);
+void	presort_stack(t_stack *a);
 void	exit_success(t_stack *a, t_stack *b);
-void	issorted(t_stack *a, t_stack *b);
 
 #endif
