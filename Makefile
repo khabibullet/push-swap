@@ -6,7 +6,7 @@
 #    By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 21:25:23 by anemesis          #+#    #+#              #
-#    Updated: 2022/03/13 21:12:30 by anemesis         ###   ########.fr        #
+#    Updated: 2022/03/19 15:56:25 by anemesis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_B		=	$(wildcard ./src_bonus/*.c)
 
 OBJ			=	$(SRC:./src/%.c=./obj/%.o)
 
-OBJ_B		=	$(SRC:./src_bonus/%.c=./obj_bonus/%.o)
+OBJ_B		=	$(patsubst %./obj/main.o,%,$(OBJ)) $(SRC_B:./src_bonus/%.c=./obj_bonus/%.o)
 
 CC			=	gcc
 
@@ -48,10 +48,10 @@ $(NAME): $(OBJ) $(HEADER)
 obj:
 	@mkdir -p obj
 
-bonus: $(NAME_B)
+bonus: all $(NAME_B)
 	
 $(NAME_B): $(OBJ_B) $(HEADER_B)
-	@$(CC) $(CFLAGS) $(INC) $(OBJ_B) -o $(NAME_B) $(LIB)
+	@$(CC) $(CFLAGS) $(INC) $(LIB) $(OBJ_B) -o $(NAME_B)
 
 ./obj_bonus/%.o: ./src_bonus/%.c | obj_bonus
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@

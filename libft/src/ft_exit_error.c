@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:38:46 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/16 13:59:08 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/19 15:08:32 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anemesis <anemesis@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:00:05 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/14 19:01:54 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:08:41 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	validate_args(int argc, char **argv)
 
 	i = 1;
 	if (argc == 1)
-		exit_error();
+		exit(EXIT_SUCCESS);
 	while (argv[i])
 	{
 		j = 0;
