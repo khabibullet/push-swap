@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 20:21:58 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/17 21:13:03 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/03/24 16:47:08 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	sort_four(t_stack *a, t_stack *b)
 	t_node	*ptr;
 	t_node	*ptr_min;
 
-	issorted(a, b);
 	ptr = a->head;
 	ptr_min = ptr;
 	while (ptr)

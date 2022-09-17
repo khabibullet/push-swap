@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:26:20 by anemesis          #+#    #+#             */
-/*   Updated: 2022/03/17 18:27:45 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:28:29 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -87,5 +88,6 @@ void	exit_error(void);
 int		ft_max(int a, int b);
 int		ft_min(int a, int b);
 int		ft_abs(int a);
+int		ft_pow(int base, int degr);
 
 #endif	/*LIBFT_H*/
